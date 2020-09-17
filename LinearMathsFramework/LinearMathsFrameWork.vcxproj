@@ -20,10 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinearMaths.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="Vector.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinearMaths.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="testing.cpp" />
+    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

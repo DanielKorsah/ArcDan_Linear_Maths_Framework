@@ -5,38 +5,45 @@
 #include <cmath>
 #include <string>
 
+//templates must be wholy defined in teh header file
+
+
+template<int dimensions>
 class Vector
 {
-protected:
-	int m_dimensions;
-};
-
-
-class Vector2 : public Vector
-{
 private:
-	double m_x;
-	double m_y;
-
+	double elements[dimensions];
 public:
-	Vector2();
-	Vector2(double x, double y);
-	double getX() const { return m_x; }
-	double getY() const { return m_y; }
-	void setXY(double x, double y) {}
+	/*bool operator+(const Vector2& other);
+	bool operator-(const Vector2& other);
+	bool operator*(const int scalar);*/
 
-	double getMagnitude();
+	//constructors
+	Vector()
+	{
+		for (int i = 0; i < dimensions; i++)
+		{
+			elements[i] = 0;
+		}
+	};
+	Vector(double a, double b)
+	{
+		elements[0] = a;
+		elements[1] = b;
+	};
 
-	Vector2 add(Vector2 other);
-	Vector2 sub(Vector2 other);
-	Vector2 mul(double scalar);
-	Vector2 normalised();
-	void setNormal();
-	std::string toString();
 
+	std::string toString()
+	{
+		int arrSize = sizeof(elements) / sizeof(elements[0]);
+		std::string out = "(";
+		for (int i = 0; i < arrSize - 1; i++)
+		{
+			out += std::to_string(elements[i]) + ",";
+		}
+		out += std::to_string(elements[arrSize - 1]);
+		out += ")";
+
+		return out;
+	};
 };
-
-Vector2 VectorRotate(Vector2 vec, double angle);
-double DotProduct(Vector2 a, Vector2 b);
-double VectorAngle(Vector2 a, Vector2 b);
-double RadToDeg(double rad);
