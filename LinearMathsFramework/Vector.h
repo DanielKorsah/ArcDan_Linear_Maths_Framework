@@ -7,8 +7,8 @@
 
 class Vector
 {
-private:
-	int dimentions;
+protected:
+	int m_dimensions;
 };
 
 
@@ -19,7 +19,7 @@ private:
 	double m_y;
 
 public:
-	Vector2() : m_x(0), m_y(0) {};
+	Vector2();
 	Vector2(double x, double y);
 	double getX() const { return m_x; }
 	double getY() const { return m_y; }

@@ -1,9 +1,15 @@
 #include "Vector.h"
 
+Vector2::Vector2() {
+	m_x = 0;
+	m_y = 0;
+	m_dimensions = 2;
+}
 
 Vector2::Vector2(double x, double y) {
 	m_x = x;
 	m_y = y;
+	m_dimensions = 2;
 }
 
 Vector2 Vector2::add(Vector2 other) {
