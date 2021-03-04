@@ -35,6 +35,7 @@ public:
 	Vector2 add(const Vector2& other);
 	Vector2 sub(const Vector2& other);
 	Vector2 mul(const double& scalar);
+	Vector2 div(const double& scalar);
 	Vector2 normalised();
 	void setNormal();
 	std::string toString();

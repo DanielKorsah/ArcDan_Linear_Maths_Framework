@@ -58,6 +58,11 @@ Vector2 Vector2::mul(const double& scalar)
 	return Vector2(x * scalar, y * scalar);
 }
 
+Vector2 Vector2::div(const double& scalar)
+{
+	return Vector2(x / scalar, y / scalar);
+}
+
 const bool Vector2::equals(const Vector2& other) const
 {
 	if (x == other.x && y == other.y)
