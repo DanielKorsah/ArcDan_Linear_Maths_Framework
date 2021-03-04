@@ -7,24 +7,28 @@
 class Vector2
 {
 private:
-
+	double vals[2];
 
 public:
-	double x, y;
+	double& x = vals[0];
+	double& y = vals[1];
 	Vector2();
 	Vector2(double x, double y);
-	double getX() const { return x; }
-	double getY() const { return y; }
-	void setXY(double x, double y) {}
 
 	double getMagnitude();
 
-	Vector2 add(Vector2 other);
-	Vector2 sub(Vector2 other);
-	Vector2 mul(double scalar);
+	Vector2 operator+(const Vector2& other);
+	Vector2 operator-(const Vector2& other);
+	Vector2 operator*(const double& scalar);
+
+	Vector2 add(const Vector2& other);
+	Vector2 sub(const Vector2& other);
+	Vector2 mul(const double& scalar);
 	Vector2 normalised();
 	void setNormal();
 	std::string toString();
+
+	
 
 };
 

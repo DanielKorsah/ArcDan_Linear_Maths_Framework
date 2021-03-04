@@ -5,14 +5,14 @@ Vector2 VectorRotate(Vector2 vec, double angle)
 {
 	//x` = xcos(ang) - ysin(ang)
 	//y` = xsin(ang) + ycos(ang)
-	double x = vec.getX();
-	double y = vec.getY();
+	double x = vec.x;
+	double y = vec.y;
 	return Vector2(x * cos(angle) - y * sin(angle), x * sin(angle) + y * cos(angle));
 }
 
 double DotProduct(Vector2 a, Vector2 b)
 {
-	return a.getX()*b.getX() + a.getY()*b.getY();
+	return a.x*b.x + a.y*b.y;
 }
 
 double VectorAngle(Vector2 a, Vector2 b)

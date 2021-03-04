@@ -12,15 +12,31 @@ Vector2::Vector2(double a, double b) {
 	y = b;
 }
 
-Vector2 Vector2::add(Vector2 other) {
-	return Vector2(x + other.getX(), y + other.getY());
+Vector2 Vector2::operator+(const Vector2& other)
+{
+	return add(other);
 }
 
-Vector2 Vector2::sub(Vector2 other) {
-	return Vector2(x - other.getX(), y - other.getY());
+Vector2 Vector2::operator-(const Vector2& other)
+{
+	return sub(other);
 }
 
-Vector2 Vector2::mul(double scalar)
+Vector2 Vector2::operator*(const double& scalar)
+{
+	return mul(scalar);
+}
+
+
+Vector2 Vector2::add(const Vector2& other) {
+	return Vector2(x + other.x, y + other.y);
+}
+
+Vector2 Vector2::sub(const Vector2& other) {
+	return Vector2(x - other.x, y - other.y);
+}
+
+Vector2 Vector2::mul(const double& scalar)
 {
 	return Vector2(x * scalar, y * scalar);
 }
@@ -50,3 +66,4 @@ std::string Vector2::toString()
 {
 	return "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
 }
+
