@@ -19,7 +19,10 @@ int main()
 	cout << "a+b: " << (a + b).toString() << endl;
 	cout << "a-b: " << (a - b).toString() << endl;
 	cout << "a.b: " << DotProduct(a, b) << endl;
-	cout << "a * 5: " << (a * 5).toString() << endl;
+
+	a *= 5;
+	cout << "a * 5: " << a.toString() << endl;
+	
 	Vector2 x = VectorRotate(a, 0.5 * M_PI);
 	Vector2 y = VectorRotate(a, DegToRad(90));
 	cout << "rotate a by 1/4Pi Radians: " << x.toString() << endl;

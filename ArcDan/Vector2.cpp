@@ -36,9 +36,36 @@ Vector2 Vector2::operator*(const double& scalar)
 	return mul(scalar);
 }
 
+
 const bool Vector2::operator==(const Vector2& other) const
 {
 	return equals(other);
+}
+
+
+void Vector2::operator=(const Vector2& other)
+{
+	assign(other);
+}
+
+void Vector2::operator+=(const Vector2& other)
+{
+	assign(add(other));
+}
+
+void Vector2::operator-=(const Vector2& other)
+{
+	assign(sub(other));
+}
+
+void Vector2::operator*=(const float& scalar)
+{
+	assign(mul(scalar));
+}
+
+void Vector2::operator/=(const float& other)
+{
+	assign(div(other));
 }
 
 
@@ -69,6 +96,12 @@ const bool Vector2::equals(const Vector2& other) const
 		return true;
 	else
 		return false;
+}
+
+void Vector2::assign(const Vector2& other)
+{
+	x = other.x;
+	y = other.y;
 }
 
 
