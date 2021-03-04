@@ -1,4 +1,4 @@
-# Simple Vector Framework for C++, Working title := ArcDan
+# ArcDan, a simple linear mathematics framework for C++
 
 Orriginally a vector framework wrote to be able to answer an interview-type question as part of a hiring process at a games company which required 2D vector manipulation like dot and cross products.
 
