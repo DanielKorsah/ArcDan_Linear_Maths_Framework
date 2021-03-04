@@ -36,12 +36,20 @@ Vector2 Vector2::operator*(const double& scalar)
 	return mul(scalar);
 }
 
+const bool Vector2::operator==(const Vector2& other) const
+{
+	return equals(other);
+}
 
-Vector2 Vector2::add(const Vector2& other) {
+
+
+Vector2 Vector2::add(const Vector2& other) 
+{
 	return Vector2(x + other.x, y + other.y);
 }
 
-Vector2 Vector2::sub(const Vector2& other) {
+Vector2 Vector2::sub(const Vector2& other) 
+{
 	return Vector2(x - other.x, y - other.y);
 }
 
@@ -49,6 +57,16 @@ Vector2 Vector2::mul(const double& scalar)
 {
 	return Vector2(x * scalar, y * scalar);
 }
+
+const bool Vector2::equals(const Vector2& other) const
+{
+	if (x == other.x && y == other.y)
+		return true;
+	else
+		return false;
+}
+
+
 
 const double Vector2::getMagnitude() const
 {

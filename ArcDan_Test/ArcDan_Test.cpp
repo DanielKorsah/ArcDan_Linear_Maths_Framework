@@ -24,6 +24,7 @@ int main()
 	Vector2 y = VectorRotate(a, DegToRad(90));
 	cout << "rotate a by 1/4Pi Radians: " << x.toString() << endl;
 	cout << "rotate a by 90 Degrees: " << y.toString() << endl;
+	cout << "Do  those two operations give the same output? " << (x == y) << endl;
 
 }
 
