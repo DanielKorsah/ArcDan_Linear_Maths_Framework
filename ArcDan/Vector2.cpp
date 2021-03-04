@@ -1,4 +1,13 @@
+// Vector2.cpp : Defines the exported functions for the DLL.
+#include "pch.h" // use stdafx.h in Visual Studio 2017 and earlier
+#include <utility>
+#include <limits.h>
 #include "Vector2.h"
+
+// DLL internal state variables:
+static unsigned long long previous_;  // Previous value, if any
+static unsigned long long current_;   // Current sequence value
+static unsigned index_;               // Current seq. position
 
 
 
@@ -41,7 +50,7 @@ Vector2 Vector2::mul(const double& scalar)
 	return Vector2(x * scalar, y * scalar);
 }
 
-double Vector2::getMagnitude()
+const double Vector2::getMagnitude() const
 {
 	//c^2 = a^2 + b^2
 	return(sqrt((x * x) + (y * y)));
@@ -66,4 +75,3 @@ std::string Vector2::toString()
 {
 	return "(" + std::to_string(x) + ", " + std::to_string(y) + ")";
 }
-

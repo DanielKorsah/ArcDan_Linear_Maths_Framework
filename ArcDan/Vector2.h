@@ -1,13 +1,22 @@
+// Vector2.h - Contains declarations of math functions
+#pragma once
+
+#ifdef ARCDAN_EXPORTS
+#define ARCDAN_API __declspec(dllexport)
+#else
+#define ARCDAN_API __declspec(dllimport)
+#endif
+
 #pragma once
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <string>
 
 
-class Vector2
+class ARCDAN_API Vector2
 {
 private:
-	double vals[2];
+	double vals[2] = {0, 0};
 
 public:
 	double& x = vals[0];
@@ -15,7 +24,7 @@ public:
 	Vector2();
 	Vector2(double x, double y);
 
-	double getMagnitude();
+	const double getMagnitude() const;
 
 	Vector2 operator+(const Vector2& other);
 	Vector2 operator-(const Vector2& other);
@@ -28,11 +37,6 @@ public:
 	void setNormal();
 	std::string toString();
 
-	
+
 
 };
-
-Vector2 VectorRotate(Vector2 vec, double angle);
-double DotProduct(Vector2 a, Vector2 b);
-double VectorAngle(Vector2 a, Vector2 b);
-double RadToDeg(double rad);
