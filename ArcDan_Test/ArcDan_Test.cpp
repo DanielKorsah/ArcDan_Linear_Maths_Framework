@@ -19,6 +19,7 @@ int main()
 	cout << "a+b: " << (a + b).toString() << endl;
 	cout << "a-b: " << (a - b).toString() << endl;
 	cout << "a.b: " << DotProduct(a, b) << endl;
+	cout << "ab angle = " + to_string(RadToDeg(VectorAngle(a, b))) << endl;
 
 	a *= 5;
 	cout << "a * 5: " << a.toString() << endl;
@@ -28,6 +29,30 @@ int main()
 	cout << "rotate a by 1/4Pi Radians: " << x.toString() << endl;
 	cout << "rotate a by 90 Degrees: " << y.toString() << endl;
 	cout << "Do  those two operations give the same output? " << (x == y) << endl;
+
+	cout << "---------------------------------------------------------------" << endl;
+
+	cout << "Vector3 Tests" << endl;
+	Vector3 c = Vector3(1, 0, 1);
+	Vector3 d = Vector3(0, 1, 0);
+
+	cout << "c: " << a.toString() << endl;
+	cout << "d: " << b.toString() << endl;
+
+	cout << "c+d: " << (c + d).toString() << endl;
+	cout << "c-d: " << (c - d).toString() << endl;
+	cout << "c.d: " << DotProduct(c, d) << endl;
+
+	cout << "cd angle = " + to_string(RadToDeg(VectorAngle(c, d))) << endl;
+
+	c *= 5;
+	cout << "c * 5: " << c.toString() << endl;
+
+	//Vector3 x = VectorRotate(c, 0.5 * M_PI);
+	//Vector3 y = VectorRotate(d, DegToRad(90));
+	//cout << "rotate a by 1/4Pi Radians: " << x.toString() << endl;
+	//cout << "rotate a by 90 Degrees: " << y.toString() << endl;
+	//cout << "Do  those two operations give the same output? " << (x == y) << endl;
 
 }
 

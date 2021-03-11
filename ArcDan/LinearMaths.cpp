@@ -4,7 +4,7 @@
 #include <cmath>
 #include <utility>
 #include <limits.h>
-#include "Vector2.h"
+
 #include "LinearMaths.h"
 
 
@@ -29,7 +29,20 @@ double DotProduct(const Vector2& a, const Vector2& b)
 	return a.x * b.x + a.y * b.y;
 }
 
+double DotProduct(const Vector3& a, const Vector3& b)
+{
+	return a.x * b.x + a.y * b.y + a.z * b.z;
+}
+
 double VectorAngle(const Vector2& a, const Vector2& b)
+{
+	//cos(ang) = a.b/mag(a)*mag(b)
+	double cosAng = DotProduct(a, b) / (a.getMagnitude() * b.getMagnitude());
+	//ang = cos^-1(a.b/mag(a)*mag(b))
+	return acos(cosAng);
+}
+
+double VectorAngle(const Vector3& a, const Vector3& b)
 {
 	//cos(ang) = a.b/mag(a)*mag(b)
 	double cosAng = DotProduct(a, b) / (a.getMagnitude() * b.getMagnitude());
