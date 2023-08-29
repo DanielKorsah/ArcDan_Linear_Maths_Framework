@@ -1,6 +1,6 @@
 # ArcDan, a simple linear mathematics framework for C++
 
-Orriginally a vector framework wrote to be able to answer an interview-type question as part of a hiring process at a games company which required 2D vector manipulation like dot and cross products.
+Orriginally a vector framework I wrote to be able to answer an interview-type question as part of a hiring process at a games company which required 2D vector manipulation like dot and cross products.
 
 TODO: 
 * Operator overloading so that simple aritmetic like scalar multiplication, addition and subtraction don't have to be functions called on Vector Objects.  
